@@ -1,5 +1,5 @@
 /* =========================
-   Reset & Root Variables
+Reset & Root Variables
 ========================= */
 * {
     margin: 0;
@@ -32,7 +32,7 @@ a {
 }
 
 /* =========================
-   Container & Responsive Queries
+Container & Responsive Queries
 ========================= */
 .container {
     width: 100%;
@@ -71,7 +71,7 @@ a {
 }
 
 /* =========================
-   Header Section
+Header Section
 ========================= */
 .cv-header {
     height: 180px;
@@ -128,7 +128,7 @@ a {
 }
 
 /* =========================
-   Global SVG
+Global SVG
 ========================= */
 svg {
     width: 22px;
@@ -136,7 +136,7 @@ svg {
 }
 
 /* =========================
-   CV Content Card & Profile
+CV Content Card & Profile
 ========================= */
 .cv-content {
     display: flex;
@@ -198,7 +198,7 @@ svg {
 }
 
 /* =========================
-   Social Links
+Social Links
 ========================= */
 .cv-content__links {
     display: flex;
@@ -240,7 +240,7 @@ svg {
 }
 
 /* =========================
-   Grid Layout Sections
+Grid Layout Sections
 ========================= */
 .cv-grid-section {
     display: grid;
@@ -271,7 +271,7 @@ svg {
 }
 
 /* =========================
-   Timeline (Work History)
+Timeline (Work History)
 ========================= */
 .timeline {
     position: relative;
@@ -329,7 +329,7 @@ svg {
 }
 
 /* =========================
-   Education & Skills Sidebar
+Education & Skills Sidebar
 ========================= */
 .cv-column-sidebar {
     display: flex;
@@ -375,7 +375,7 @@ svg {
 }
 
 /* =========================
-   Hobbies Section
+Hobbies Section
 ========================= */
 .cv-hobbies {
     background: linear-gradient(135deg, #f3e8ff 0%, #fae8ff 100%);
