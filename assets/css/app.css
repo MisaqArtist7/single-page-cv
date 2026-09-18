@@ -1,49 +1,509 @@
+/* =========================
+   Reset & Root Variables
+========================= */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
-.cv-wrapper{
+
+:root {
+    --titleColor: #1e293b;
+    --descriptionColor: #475569;
+    --primaryColor: #ec4899;
+    --accentGradient: linear-gradient(135deg, #5020a4 0%, #ee52a0 100%);
+    --bgCard: #ffffff;
+    --borderColor: #e2e8f0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--titleColor);
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--titleColor);
+}
+
+/* =========================
+   Container & Responsive Queries
+========================= */
+.container {
+    width: 100%;
+    padding: 0 16px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+/* Responsive Container Widths */
+@media (min-width: 576px) {
+    .container { max-width: 540px; }
+}
+
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+}
+
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
+
+@media (min-width: 1600px) {
+    .container { max-width: 1500px; }
+}
+
+@media (min-width: 1920px) {
+    .container { max-width: 1720px; }
+}
+
+/* =========================
+   Header Section
+========================= */
+.cv-header {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.75),
+            rgba(15, 23, 42, 0.75)
+        ),
+        url("../images/Banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cv-header__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    color: white;
+    gap: 12px;
 }
-.cv-header {
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../images/Banner.png');
 
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+.cv-header__name {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 150px;
+    gap: 8px;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-.cv-header__name{
-    font-size: 32px;
-    letter-spacing: 3px;
-}
-.cv-header__role{
-    border: 2px solid white;
-    border-radius: 1px;
-    padding: 5px;
-    font-size: 16px;
+.cv-header__role {
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-.cv-header__underline{
-    width: 77px;
-    height: 1.5px;
-    background: white;
-    display: flex;
+.cv-header__underline {
     display: block;
+    width: 77px;
+    height: 3px;
+    background: var(--primaryColor);
+    border-radius: 2px;
 }
 
-svg{
+/* =========================
+   Global SVG
+========================= */
+svg {
     width: 22px;
     height: 22px;
+}
+
+/* =========================
+   CV Content Card & Profile
+========================= */
+.cv-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bgCard);
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--borderColor);
+    gap: 30px;
+}
+
+.cv-content__profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 75%;
+}
+
+.cv-content__avatar-wrapper {
+    position: relative;
+    padding: 3px;
+    background: var(--accentGradient);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cv-content__avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: 3px solid white;
+}
+
+.cv-content__bio {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cv-content__title {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--titleColor);
+}
+
+/* Increased font size and improved readability */
+.cv-content__description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--descriptionColor);
+    text-align: justify;
+}
+
+/* =========================
+   Social Links
+========================= */
+.cv-content__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    border-left: 1px solid var(--borderColor);
+    padding-left: 25px;
+}
+
+/* Increased font size for social links */
+.cv-content__link {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--descriptionColor);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.cv-content__link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.cv-content__link:hover {
+    background-color: #f1f5f9;
+    color: var(--titleColor);
+    transform: translateX(3px);
+}
+
+.cv-content__link:hover svg {
+    transform: scale(1.1);
+}
+
+/* =========================
+   Grid Layout Sections
+========================= */
+.cv-grid-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.cv-section-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--titleColor);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.cv-section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primaryColor);
+}
+
+/* =========================
+   Timeline (Work History)
+========================= */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--borderColor);
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.timeline__item {
+    position: relative;
+}
+
+.timeline__marker {
+    position: absolute;
+    left: -27px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--primaryColor);
+}
+
+.timeline__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--titleColor);
+    letter-spacing: 1px;
+}
+
+.timeline__meta {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.timeline__list {
+    list-style-type: square;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Increased font size for list items */
+.timeline__list li {
+    font-size: 14px;
+    color: var(--descriptionColor);
+    line-height: 1.6;
+}
+
+/* =========================
+   Education & Skills Sidebar
+========================= */
+.cv-column-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cv-sub-block {
+    background: var(--bgCard);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--borderColor);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.education-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--titleColor);
+}
+
+.education-meta {
+    display: block;
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Increased font size for skills */
+.skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--descriptionColor);
+    font-weight: 500;
+}
+
+/* =========================
+   Hobbies Section
+========================= */
+.cv-hobbies {
+    background: linear-gradient(135deg, #f3e8ff 0%, #fae8ff 100%);
+    border: 1px solid #f0abfc55;
+    padding: 25px;
+    border-radius: 16px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.cv-hobbies__heading {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #701a75;
+    margin-bottom: 20px;
+}
+
+.cv-hobbies__icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #86198f;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.hobby-item svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5;
+}
+
+/* =========================
+    Responsive Fixes (Media Queries)
+========================= */
+@media (max-width: 992px) {
+    .cv-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .cv-content__profile {
+        width: 100%;
+    }
+
+    .cv-content__links {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-left: none;
+        border-top: 1px solid var(--borderColor);
+        padding-left: 0;
+        padding-top: 20px;
+        gap: 10px;
+    }
+
+    .cv-content__link:hover {
+        transform: translateY(-2px);
+    }
+
+    .cv-grid-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 575px) {
+    .cv-header {
+        height: 150px;
+    }
+
+    .cv-header__name {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .cv-header__role {
+        font-size: 12px;
+    }
+
+    .cv-content__profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cv-content__avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cv-content__bio {
+        align-items: center;
+    }
+
+    .cv-content__title {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .cv-content__description {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .cv-content__links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cv-content__link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cv-hobbies__icons {
+        justify-content: center;
+        gap: 30px;
+    }
 }
