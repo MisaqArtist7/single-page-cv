@@ -2,6 +2,9 @@
 
 A responsive single-page CV website built with semantic HTML and CSS.
 
+## Preview
+![Project Preview](./preview.png)
+
 🔗 **Live Demo:** [https://single-page-cv-kappa.vercel.app/](https://single-page-cv-kappa.vercel.app/)
 
 ## Features
