@@ -19,4 +19,4 @@ A responsive single-page CV website built with semantic HTML and CSS.
 To run this project locally, simply clone the repository and open the `index.html` file in your browser:
 
 ```bash
-git clone [https://github.com/MisaqArtist7/single-page-cv.git]
+git clone https://github.com/MisaqArtist7/single-page-cv.git
